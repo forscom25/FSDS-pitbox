@@ -793,7 +793,7 @@ Eigen::Vector2d Localization::wgs84ToEnu(const Eigen::Vector2d& wgs84_pos) const
     double dlon = lon_rad - ref_lon_rad;
     
     // Convert WGS84 to ENU coordinates: x = (lon - ref_lon) * EARTH_RADIUS * cos(ref_lat), y = (lat - ref_lat) * EARTH_RADIUS
-    double x = EARTH_RADIUS * dlon * cos(ref_lat_rad); // cos(ref_lat_rad) to account for latitude scaling
+    double x = EARTH_RADIUS * dlon * cos(ref_lat_rad);
     double y = EARTH_RADIUS * dlat;
     
     return Eigen::Vector2d(x, y);
